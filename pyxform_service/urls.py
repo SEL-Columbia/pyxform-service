@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'xlsformPost', 'xlsform_main.views.consume_xlsform', name='xlsform-post'),
     # Examples:
     # url(r'^$', 'pyxform_service.views.home', name='home'),
     # url(r'^pyxform_service/', include('pyxform_service.foo.urls')),
