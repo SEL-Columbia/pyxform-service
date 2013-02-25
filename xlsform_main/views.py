@@ -1,5 +1,6 @@
 from django.utils import simplejson
 from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 
 from .utils import process_xlsform
 
