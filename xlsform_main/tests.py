@@ -34,3 +34,13 @@ class XLSFormTest(TestCase):
             self.assertEqual(res.status_code, 200)
             self.assertEqual(res['Content-Type'], 'application/json')
 
+    def test_consume_xlsform_bad_request(self):
+        xls_file = os.path.join(
+            self.this_directory, 'fixtures', 'transportation_bad.xls')
+        url = reverse(consume_xlsform)
+        client = Client()
+        with open(xls_file) as f:
+            res = client.post(url, {'xlsform_file': f})
+            self.assertEqual(res.status_code, 400)
+            self.assertEqual(res['Content-Type'], 'application/json')
+
