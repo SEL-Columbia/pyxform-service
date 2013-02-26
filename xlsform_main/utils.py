@@ -4,6 +4,9 @@ from pyxform.builder import create_survey_from_xls
 
 
 def process_xlsform(filepath):
+
+    '''Genrates a pyxform survey object from a filepath or file object'''
+
     survey = None
     if isinstance(filepath, File):
         survey = create_survey_from_xls(filepath)
